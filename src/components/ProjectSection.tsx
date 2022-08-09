@@ -1,16 +1,6 @@
 import { ProjectData, IProjectData } from '../projectData';
 import Project from './Project';
-import { Container, Box, Grid, Card, Typography } from '@mui/material';
-
-//
-// sx={{
-//   display: 'flex',
-//   flexWrap: 'wrap',
-//   width: 600,
-//   minHeight: 1000,
-//   p: 1,
-//   m: 1,
-// }}
+import { Box, Grid, Typography } from '@mui/material';
 
 const ProjectSection = () => {
   return (
@@ -20,7 +10,8 @@ const ProjectSection = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          padding: '0 40px',
+          padding: '0px 40px',
+          paddingBottom: '50px',
         }}
       >
         <Typography
@@ -30,15 +21,10 @@ const ProjectSection = () => {
         >
           Project Showcase
         </Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            maxWidth: '100%',
-          }}
-        >
-          {ProjectData.map((item: IProjectData) => (
+        <Grid container spacing={6}>
+          {ProjectData.map((item: IProjectData, index: number) => (
             <Project
+              key={index}
               name={item.name}
               url={item.url}
               img={item.img}
@@ -47,7 +33,7 @@ const ProjectSection = () => {
               sourceCodeUrl={item.sourceCodeUrl}
             />
           ))}
-        </Box>
+        </Grid>
       </Box>
     </>
   );

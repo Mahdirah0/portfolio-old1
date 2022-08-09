@@ -1,13 +1,10 @@
 import React from 'react';
 import { IProjectData } from '../projectData';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
 
 const Project: React.FC<IProjectData> = ({
   name,
@@ -18,43 +15,76 @@ const Project: React.FC<IProjectData> = ({
   sourceCodeUrl,
 }) => {
   return (
-    <Card sx={{ width: '25%' }}>
-      <CardMedia
-        component='img'
-        height='250'
-        image={`${process.env.PUBLIC_URL}/images/${img}`}
-        alt={name}
-      />
-      <CardContent>
-        <Typography gutterBottom variant='h5' component='div'>
-          {name}
-        </Typography>
-        <Typography sx={{ maxWidth: 350 }}>{description}</Typography>
-        <Box sx={{ display: 'flex' }}>
-          {tech.map((item) => (
-            <Typography
-              sx={{ margin: '5px 5px 0 0' }}
-              variant='body2'
-              color='text.secondary'
-            >
-              {item}
+    <Grid item md={6} lg={6} xl={3} sm={12}>
+      <Box
+        sx={{
+          border: '1px solid #E5E7E9',
+          borderRadius: '15px',
+          minWidth: '25%',
+          minHeight: '460px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          boxShadow: '8px 8px 5px #F2F3F4',
+          overflow: 'hidden',
+        }}
+      >
+        <Box>
+          <Box>
+            <img
+              src={`${process.env.PUBLIC_URL}/images/${img}`}
+              alt={name}
+              style={{
+                height: '250px',
+                width: '100%',
+                objectFit: 'fill',
+              }}
+            />
+          </Box>
+          <Box sx={{ marginLeft: '15px' }}>
+            <Typography gutterBottom variant='h5' component='div'>
+              {name}
             </Typography>
-          ))}
+            <Typography sx={{ maxWidth: '550px' }}>{description}</Typography>
+          </Box>
         </Box>
-      </CardContent>
-      <CardActions>
-        <Button size='small'>
-          <Link underline='none' href={sourceCodeUrl}>
-            Source Code
-          </Link>
-        </Button>
-        <Button size='small'>
-          <Link underline='none' href={url}>
-            Website
-          </Link>
-        </Button>
-      </CardActions>
-    </Card>
+        <Box sx={{ margin: '10px 15px' }}>
+          <Box sx={{ display: 'flex', margin: '10px 0' }}>
+            {tech.map((item: any, index: number) => (
+              <Box
+                key={index}
+                sx={{
+                  padding: '5px 10px',
+                  textAlign: 'center',
+                  marginRight: '5px',
+                  marginTop: '10px',
+                  backgroundColor: '#E5E7E9',
+                  borderRadius: '2px',
+                }}
+              >
+                <Typography
+                  sx={{ color: 'black' }}
+                  variant='body2'
+                  color='text.secondary'
+                >
+                  {item}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+          <Button size='small' sx={{ marginLeft: '-5px' }}>
+            <Link underline='none' href={sourceCodeUrl}>
+              Source Code
+            </Link>
+          </Button>
+          <Button size='small'>
+            <Link underline='none' href={url}>
+              Website
+            </Link>
+          </Button>
+        </Box>
+      </Box>
+    </Grid>
   );
 };
 

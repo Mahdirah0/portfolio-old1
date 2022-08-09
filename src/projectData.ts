@@ -27,7 +27,7 @@ export const ProjectData: IProjectData[] = [
   {
     name: 'Movie Website',
     img: 'movie.png',
-    tech: ['ReactJS', 'Html', 'CSS', 'Responsive', 'Javascript', 'API'],
+    tech: ['ReactJS', 'Responsive', 'Javascript', 'API'],
     description:
       'A web application created with ReactJS showcasing popular movies and series with a use an API.',
     url: 'https://movie-website-app.netlify.app/',
@@ -41,36 +41,4 @@ export const ProjectData: IProjectData[] = [
     url: 'https://traveler-website.netlify.app/',
     sourceCodeUrl: 'https://github.com/Mahdirah0/traveler',
   },
-  {
-    name: 'Traveler Website',
-    img: 'travel.png',
-    tech: ['HTML', 'CSS', 'Javascript', 'Responsive'],
-    description: '',
-    url: 'https://traveler-website.netlify.app/',
-    sourceCodeUrl: 'https://github.com/Mahdirah0/traveler',
-  },
-  {
-    name: 'Traveler Website',
-    img: 'travel.png',
-    tech: ['HTML', 'CSS', 'Javascript', 'Responsive'],
-    description: '',
-    url: 'https://traveler-website.netlify.app/',
-    sourceCodeUrl: 'https://github.com/Mahdirah0/traveler',
-  },
-  // {
-  //   name: 'Traveler Website',
-  //   img: 'travel.png',
-  //   tech: ['HTML', 'CSS', 'Javascript', 'Responsive'],
-  //   description: '',
-  //   url: 'https://traveler-website.netlify.app/',
-  //   sourceCodeUrl: 'https://github.com/Mahdirah0/traveler',
-  // },
-  // {
-  //   name: 'Traveler Website',
-  //   img: 'travel.png',
-  //   tech: ['HTML', 'CSS', 'Javascript', 'Responsive'],
-  //   description: '',
-  //   url: 'https://traveler-website.netlify.app/',
-  //   sourceCodeUrl: 'https://github.com/Mahdirah0/traveler',
-  // },
 ];
